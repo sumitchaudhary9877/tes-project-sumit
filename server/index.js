@@ -1,7 +1,7 @@
-const express = require("express");
-const app = express();
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
 
+const app = express();
 app.use(cors());
 
 const products = [
@@ -13,12 +13,11 @@ const products = [
   { id: 6, name: "USB-C Hub", price: 2999, image: "https://placehold.co/400x300?text=USB+Hub" }
 ];
 
-
 app.get("/api/products", (_, res) => {
   res.json(products);
 });
 
-// 🟢 Export it for Vercel
-module.exports = app;
+const PORT = 8080;
+app.listen(PORT, () => console.log(`✅ Backend running on http://localhost:${PORT}`));
 
 
