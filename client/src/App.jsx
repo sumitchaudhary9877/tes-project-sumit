@@ -11,7 +11,7 @@ function AppInner() {
   const { totalItems } = useCart();
 
   useEffect(() => {
- fetch("/api/products")
+    fetch("/api/products")
       .then((res) => res.json())
       .then(setProducts)
       .catch((err) => setError(err.message));
